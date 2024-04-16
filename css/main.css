@@ -29,7 +29,8 @@ html {
 
 body {
     align-items: center;
-    background-color: #1f1f1f;
+    background: rgb(56,56,56);
+    background: linear-gradient(167deg, rgba(56,56,56,1) 29%, rgba(144,144,144,1) 100%); 
     color: #ddd;
     display: flex;
     height: 100%;
@@ -82,6 +83,27 @@ main {
 
 .link-list-item:hover {
     background-color: #888;
+}
+
+#danger {
+    position: relative;
+}
+
+#danger:hover {
+    background-color: #ff6054;
+}
+
+.danger {
+    position: absolute;
+    right: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+#danger:hover .danger {
+    visibility: visible;
+    opacity: 1;
 }
 
 .link {
@@ -145,10 +167,9 @@ main {
     box-shadow: 0px 0px 15px 2px #111;
     box-sizing: border-box;
     color: #ddd;
-    font-size: 16px;
+    font-size: 18px;
     height: 25px;
-    padding: 0 25px 0 0;
-    text-align: center;
+    padding: 25px;
     width: 100%;
 }
 
@@ -163,8 +184,9 @@ main {
     width: 25px;
 }
 
-#search-bar:focus, #search-bar:focus + #search-bar-btn {
+#search-bar:focus {
     border-color: #888;
+    border: 1px solid;
 }
 
 #links-container {
