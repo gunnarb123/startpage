@@ -6,7 +6,7 @@ const clockInterval = 100;
 /**
  * Search engine query url
  */
-const searchEngineUrl = 'https://duckduckgo.com/?q=';
+const searchEngineUrl = 'https://www.google.com/search?q=';
 
 const tabKeyCode = 9;
 const enterKeyCode = 13;
@@ -27,10 +27,12 @@ function getDateTime() {
     let seconds = dateTime.getSeconds();
 
     if (hour < 0) {
-        hour = 24 + hour;
+        hour = hour;
+    } else if (hour > 12) {
+        hour = hour - 12;
     }
-
-    let date = (day < 10 ? '0' + day : day) + '/' + (month < 10 ? '0' + month : month) + '/' + dateTime.getFullYear();
+     
+    let date = (month < 10 ? '0' + month : month) + '/' + (day < 10 ? '0' + day : day) + '/' + dateTime.getFullYear();
     let time = (hour < 10 ? '0' + hour : hour) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
 
     return date + '\n' + time;
