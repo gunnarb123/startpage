@@ -27,7 +27,7 @@ function getDateTime() {
     let seconds = dateTime.getSeconds();
 
     if (hour < 0) {
-        hour = hour;
+        hour = 24 + hour;
     } else if (hour > 12) {
         hour = hour - 12;
     }
