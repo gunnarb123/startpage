@@ -25,15 +25,18 @@ function getDateTime() {
     let hour = dateTime.getHours();
     let minutes = dateTime.getMinutes();
     let seconds = dateTime.getSeconds();
+    let ampm = "";
 
     if (hour < 0) {
         hour = 24 + hour;
+        ampm = "A.M.";
     } else if (hour > 12) {
         hour = hour - 12;
+        ampm = "P.M.";
     }
      
     let date = (month < 10 ? '0' + month : month) + '/' + (day < 10 ? '0' + day : day) + '/' + dateTime.getFullYear();
-    let time = (hour < 10 ? '0' + hour : hour) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
+    let time = (hour < 10 ? '0' + hour : hour) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds) + " " + ampm;
 
     return date + '\n' + time;
 }
