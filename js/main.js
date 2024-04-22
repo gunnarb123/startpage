@@ -27,11 +27,10 @@ function getDateTime() {
     let seconds = dateTime.getSeconds();
     let ampm = "";
 
-    if (hour < 0) {
-        hour = 24 + hour;
+    if (hour <= 12) {
         ampm = "A.M.";
-    } else if (hour > 12) {
-        hour = hour - 12;
+    } else if (hour >= 12) {
+        hour -= 12;
         ampm = "P.M.";
     }
      
